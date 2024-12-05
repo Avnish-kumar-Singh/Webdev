@@ -1,0 +1,31 @@
+bookstore {
+    display: block;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+book {
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+title {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+author {
+    display: block;
+    color: #555;
+}
+
+price {
+    display: block;
+    color: green;
+    font-weight: bold;
+}
