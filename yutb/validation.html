@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Registration Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <div id="error-message" class="error"></div>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <!-- Text Input -->
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+
+            <!-- Text Input -->
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+
+            <!-- Password Input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a password">
+
+            <!-- Email Input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+
+            <!-- Date Input -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+
+            <!-- Radio Buttons -->
+            <div class="radio-group">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="checkbox-group">
+                <label>Hobbies:</label>
+                <label><input type="checkbox" name="hobbies" value="reading"> Reading</label>
+                <label><input type="checkbox" name="hobbies" value="traveling"> Traveling</label>
+                <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+            </div>
+
+            <!-- Dropdown/Select -->
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="">Select your country</option>
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value ="india">India</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Clear any previous error messages
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.innerHTML = '';
+
+            // Get form values
+            const firstName = document.getElementById('first-name').value.trim();
+            const lastName = document.getElementById('last-name').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const dob = document.getElementById('dob').value.trim();
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const country = document.getElementById('country').value;
+
+            // Validation Checks
+            if (firstName === '') {
+                errorMessage.innerHTML = 'First Name is required';
+                return false;
+            }
+
+            if (lastName === '') {
+                errorMessage.innerHTML = 'Last Name is required';
+                return false;
+            }
+
+            if (password === '' || password.length < 6) {
+                errorMessage.innerHTML = 'Password must be at least 6 characters long';
+                return false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email === '' || !email.match(emailPattern)) {
+                errorMessage.innerHTML = 'Please enter a valid email address';
+                return false;
+            }
+
+            if (dob === '') {
+                errorMessage.innerHTML = 'Date of Birth is required';
+                return false;
+            }
+
+            if (!gender) {
+                errorMessage.innerHTML = 'Please select your gender';
+                return false;
+            }
+
+            if (country === '') {
+                errorMessage.innerHTML = 'Please select your country';
+                return false;
+            }
+
+            // Form is valid
+            alert('Form submitted successfully!');
+            return true;
+        }
+    </script>
+</body>
+
+</html>

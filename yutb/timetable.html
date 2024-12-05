@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Quiz</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        } 
+        .quiz-container { 
+            max-width: 600px; 
+            margin: auto; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background-color: #f9f9f9; 
+        } 
+        h2 { 
+            text-align: center; 
+        } 
+        .question { 
+            margin-bottom: 15px; 
+        } 
+        .options label { 
+            display: block; 
+            margin-bottom: 8px; 
+        } 
+        .result { 
+            margin-top: 20px; 
+            font-weight: bold; 
+            font-size: 1.2em; 
+        } 
+        .submit-btn { 
+            margin-top: 15px; 
+            padding: 10px 20px; 
+            font-size: 1em; 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+<div class="quiz-container"> 
+    <h2>JavaScript Quiz</h2> 
+ 
+    <!-- Question 1 --> 
+    <div class="question"> 
+        <p>1. What is the correct syntax for referring to an external script called 
+"script.js"?</p> 
+        <div class="options"> 
+            <label><input type="radio" name="q1" value="a"> &lt;script 
+href="script.js"&gt;</label> 
+            <label><input type="radio" name="q1" value="b"> &lt;script 
+src="script.js"&gt;</label> 
+            <label><input type="radio" name="q1" value="c"> &lt;script 
+name="script.js"&gt;</label> 
+            <label><input type="radio" name="q1" value="d"> &lt;script 
+file="script.js"&gt;</label> 
+        </div> 
+    </div> 
+ 
+    <!-- Question 2 --> 
+    <div class="question"> 
+        <p>2. How do you write "Hello World" in an alert box?</p> 
+        <div class="options"> 
+            <label><input type="radio" name="q2" value="a"> alertBox("Hello 
+World");</label> 
+            <label><input type="radio" name="q2" value="b"> msg("Hello 
+World");</label> 
+            <label><input type="radio" name="q2" value="c"> alert("Hello 
+World");</label> 
+            <label><input type="radio" name="q2" value="d"> msgBox("Hello 
+World");</label> 
+        </div> 
+    </div> 
+ 
+    <!-- Question 3 --> 
+    <div class="question"> 
+        <p>3. How do you create a function in JavaScript?</p> 
+        <div class="options"> 
+            <label><input type="radio" name="q3" value="a"> function = 
+myFunction()</label> 
+            <label><input type="radio" name="q3" value="b"> 
+function:myFunction()</label> 
+            <label><input type="radio" name="q3" value="c"> function 
+myFunction()</label> 
+            <label><input type="radio" name="q3" value="d"> 
+create.myFunction()</label> 
+        </div> 
+    </div> 
+ 
+    <button class="submit-btn" onclick="calculateScore()">Submit</button> 
+    <div class="result" id="result"></div> 
+</div> 
+ 
+<script> 
+    // Correct answers 
+    const correctAnswers = { 
+        q1: "b", 
+        q2: "c", 
+        q3: "c" 
+    }; 
+ 
+    // Function to calculate the score 
+    function calculateScore() { 
+        let score = 0; 
+ 
+        // Loop through each question and check the answer 
+        for (const question in correctAnswers) { 
+            const selectedOption = 
+document.querySelector(`input[name="${question}"]:checked`); 
+            if (selectedOption && selectedOption.value === 
+correctAnswers[question]) { 
+                score++; 
+            } 
+        } 
+ 
+        // Display the result 
+        const totalQuestions = Object.keys(correctAnswers).length; 
+        const result = document.getElementById("result"); 
+        result.innerHTML = `You scored ${score} out of ${totalQuestions}.`; 
+ 
+        // Optionally, provide feedback based on the score 
+        if (score === totalQuestions) { 
+            result.innerHTML += " Excellent job!"; 
+        } else if (score >= totalQuestions / 2) { 
+            result.innerHTML += " Good try!"; 
+        } else { 
+            result.innerHTML += " Better luck next time!"; 
+        } 
+    } 
+</script> 
+ 
+</body> 
+</html>

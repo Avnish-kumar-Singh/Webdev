@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display property</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+        header{
+            border: 2px solid red;
+            margin: auto;
+           /*border: 2px solid yellow;*/
+            width: 1200px;
+            
+        }
+      img{
+        width: 50px;
+       /* height: 50px;*/
+        margin: auto;
+        display: block;
+
+      }
+      h3{
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0px;
+        text-align: center;
+      }
+      .box{
+        border: 3px solid brown;
+        background-color: yellowgreen;
+        margin:4px 0px;
+        padding: 3px;
+        width: 33%;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+      .container{
+        width: 1200px;
+        margin: auto;
+      }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <img src="https://images.unsplash.com/photo-1579158949482-3e9e0ac69333?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aW1hZ2V8ZW58MHx8MHx8fDA%3D" alt="" srcset="">
+        <h3>Welcome to my tab...</h3>
+    </header>
+    <div class="container">
+      <div class="box">
+        <h4 class="heading">Heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolore ipsam illum iusto praesentium tempore, sapiente quae sequi laudantium quaerat est labore laborum aspernatur? Blanditiis, itaque? Totam repellendus fugiat voluptatum ut qui dignissimos culpa. Provident animi iusto maxime temporibus corrupti!</p>
+      </div>
+
+      <div class="box">
+        <h4 class="heading">Heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+      elit. Vel dolore ipsam illum iusto praesentium 
+      tempore, sapiente quae sequi laudantium quaerat est 
+      labore laborum aspernatur? Blanditiis, itaque? Totam 
+      repellendus fugiat voluptatum ut qui dignissimos 
+      culpa. Provident animi iusto maxime temporibus 
+      corrupti!</p>
+      </div>
+
+      <div class="box">
+        <h4 class="heading">Heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+      elit. Vel dolore ipsam illum iusto praesentium 
+      tempore, sapiente quae sequi laudantium quaerat est 
+      labore laborum aspernatur? Blanditiis, itaque? Totam 
+      repellendus fugiat voluptatum ut qui dignissimos 
+      culpa. Provident animi iusto maxime temporibus 
+      corrupti!</p>
+      </div>
+    </div>
+</body>
+</html>

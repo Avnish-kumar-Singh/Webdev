@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Functions</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        var str="This is a String";
+        console.log(str);
+        // First occurence of substring..
+        var position=str.indexOf("a");
+        console.log(position);
+
+        // Last occurence of substring..
+           position=str.lastIndexOf("a");
+          console.log(position);
+        // slicing
+            var substr=str.slice(1,6);
+            console.log(substr);
+
+            var substr=str.substring(1,6);
+            console.log(substr);
+
+            var substr1=str.substr(1,6);
+            console.log(substr1);
+
+            var replaced=str.replace('String', 'Avnish');
+            console.log(str);
+            console.log(replaced);
+
+            console.log(replaced.toUpperCase());
+            console.log(replaced.toLowerCase());
+
+            var newString=replaced.concat(' Good boy');
+            console.log(newString);
+
+            var strWithWhiteSpaces = "     this contains            WhiteSpaces  ";
+            console.log(strWithWhiteSpaces);
+            console.log(strWithWhiteSpaces.trim());
+
+
+            var char2 = str.charAt(2);
+            console.log(char2);
+
+            var char2 = str.charCodeAt(2);
+            console.log(char2);
+
+            //slicing
+
+            console.log(str[3]);
+    </script>
+</body>
+</html>

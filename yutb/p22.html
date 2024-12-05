@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility and z-index</title>
+    <style>
+        .box{
+            width: 170px;
+            height: 170px;
+            border: 5px solid yellow;
+        }
+        #box-1{background-color: green;
+            position: relative;
+            top: 45px;
+            z-index: -1000;
+        }
+        #box-2{background-color: red;
+            position: relative;
+            top: 35px;
+            z-index: 0;
+              /*Z-index will work only for position: Relative, absolute,fixed,or sticky
+              /*visibility: hidden;
+              This is use for hiodden the visibility mode but its space is always reserved*/
+              /*display: none; 
+               Display none is use for Delete space i.e there will be no gap between two objects*/   
+        }
+        #box-3{background-color: blue;}
+        #box-4{background-color: goldenrod;}
+    </style>
+</head>
+<body>
+    <div class="box" id="box-1"></div>
+    <div class="box" id="box-2"></div>
+    <div class="box" id="box-3"></div>
+    <div class="box" id="box-4"></div>
+</body>
+</html>

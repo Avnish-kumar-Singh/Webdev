@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope and conditional</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>list-1</li>
+            <li>list-2</li>
+            <li>list-3</li>
+            <li>list-4</li>
+            <li>list-5</li>
+            <li>list-6</li>
+            <li>list-7</li>
+        </ul>
+    </div>
+    <script>
+        var string1 ="This is String";
+        console.log(string1);
+        let a='r'
+        console.log(a);
+        {
+            let a='p';
+            console.log(a);
+        }
+
+        const b='This cannot be change';
+        // b='I want to change';
+        console.log(b);
+
+
+        let age=18;
+        if(age>18){
+            console.log("You can drink...")
+        }else{
+            console.log("You cannot drink..");
+        }
+
+        const tea=23;
+        switch(tea){
+            case 21:
+            console.log("This is 21 cups of tea")
+            break;
+
+            case 22:
+            console.log("This is 22 cups of tea")
+            break;
+
+            case 23:
+            console.log("This is 23 cups of tea")
+            break;
+
+            case 24:
+            console.log("This is 24 cups of tea")
+            break;
+
+            default:
+            console.log("The value of cup is non of above")
+            break;
+        }
+
+
+    </script>
+</body>
+</html>

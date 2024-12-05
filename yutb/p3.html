@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatiable" content="ie=edge">
+    <title>Form</title>
+</head>
+
+<body>
+    <!-- <h3>This is HTML FORM tutorial</h3> -->
+     <h2>Student Registration </h2>
+    <form action="backend.php">
+        <!-- Here "id"  =  "lable for"...."" -->
+        <label for="name">Name:</label>
+        <div>
+            <input type="text" name="myName" id="name">
+        </div>
+        <br>
+        <div>
+            Role:<input type="text" name="myRole">
+        </div>
+        <br>
+        <div>
+            Email:<input type="email" name="myEmail">
+        </div>
+        <br>
+        <!-- <div> -->
+        <!-- <input type="submit" value="submit now"> -->
+        <!-- </div> -->
+        <!-- <br> -->
+        <div>
+            Date:<input type="date" name="myDate">
+        </div>
+        <br>
+        <div>
+            <div>
+                Bonus:<input type="number" name="Bonus">
+            </div>
+            <br>
+            <label for="eligible">Are you eligible?:</label>
+            <div>
+                <input type="checkbox" name="myEligiblity" id="eligible">
+            </div>
+            <br>
+            <div>
+                Gender:Male<input type="radio" name="myGender">feMale<input type="radio" name="myGender">other<input
+                    type="radio" name="myGender">
+            </div>
+            <br>
+            <div>
+              Write about yourself:<br><textarea name="myText" cols="30" rows="10"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="car">Car</label>
+                <select name="myCar" id="car">
+                    <option value="ind">indica</option>
+                    <option value="swf">swift</option>
+                    <option value="frtnr"selected>fourtuner</option>
+                    <option value="brz">breaza</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="submit now">
+                <input type="reset" value="Reset">
+                </div>
+                <br>
+    </form>
+</body>
+
+</html>
